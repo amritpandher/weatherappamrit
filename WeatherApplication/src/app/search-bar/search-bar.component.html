@@ -1,0 +1,34 @@
+<div id=":host" [ngStyle]="{'background-color':getColor(condition)}">
+
+<form>
+    <div class="form-group">
+      <input type="text" class="form-control" id="main-input" placeholder="City" [formControl]="city" (onSelect)="selectedval" (change)='OnSubmit()'>
+    </div>
+  </form>
+  
+  
+  
+
+<div *ngIf="condition">
+
+    <div class="container" id="titleheader">
+        Today's Weather <br> <b> {{ currenttemperature | number:'1.0-0' }}  </b> <img id="weathicon" src="https://image.flaticon.com/icons/png/512/15/15752.png" height="30" width="35" > <br>
+        <img src="http://openweathermap.org/img/wn/{{iconcode}}@2x.png" height="140" width="140"> <br>
+        {{ condition }}
+    </div>
+   
+  <div class="container">
+        <div class="row">
+            <div class="column">Daily High: {{ hightemperature | number:'1.0-0' }} celsius</div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column">Daily Low: {{ lowtemperature | number:'1.0-0' }} celsius </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+  
+  
